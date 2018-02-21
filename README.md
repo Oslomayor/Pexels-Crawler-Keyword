@@ -33,7 +33,7 @@
 
 ![](https://github.com/Oslomayor/Markdown-Imglib/blob/master/Imgs/pexels-crawler5.PNG?raw=true)
 
-可以发现，只要在原网址后面加上 /search/food /，即可得到 food 的搜索结果。
+可以发现，只要在原网址后面加上 /search/food/，即可得到 food 的搜索结果。
 
 于是按照图片爬虫的常规思路，凉一杯茶的功夫，写了个脚本
 
