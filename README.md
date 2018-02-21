@@ -46,3 +46,6 @@
 ### 2. 图片数量
 
 Pexels 是个动态网页，所谓动态网页，手动浏览时，鼠标往下翻页时才会加载下面的内容。程序中每次请求只返回14张图片，如何下载更多数量的图片，自定义数量呢？
+### 3. Release
+
+Python 脚本转成 exe 有三种工具， [py2exe](https://sourceforge.net/projects/py2exe/files/py2exe/0.6.9/), [pyinstaller](http://www.pyinstaller.org/downloads.html), [cxfreeze](https://anthony-tuininga.github.io/cx_Freeze/), py2exe 2008年停更了，pyinstaller 和 cxfreeze 用了最新版本，打包的 exe 都不能工作欸。
