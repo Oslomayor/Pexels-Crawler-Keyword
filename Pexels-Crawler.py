@@ -24,13 +24,16 @@ def download_imgs(keyword):
     res = requests.get(url, headers=headers)
     soup = BeautifulSoup(res.text, 'lxml')
     jpg_srcs = soup.select('body > div.page-wrap > div.l-container > div.photos > article > a > img')
+    count = 0
     for count, jpg_src in enumerate(jpg_srcs):
         jpg_src = jpg_src.get('src')
         jpg = requests.get(jpg_src, headers=headers)
         file = open(dir + '/img of {keyword}/{keyword}_{count}.jpg'.format(keyword=keyword, count=count), 'wb')
         file.write(jpg.content)
         file.close()
-    print('共下载{}张图片\n'.format(count) + '已保存在 {}'.format(dir + '/img of {keyword}'.format(keyword=keyword)))
+    if count == 0:
+        print('暂时仅支持英文关键词')
+    print('共下载{}张图片\n'.format(count) + '已保存在 {}'.format(dir + '/imgs of {keyword}'.format(keyword=keyword)))
 
 def main():
     keyword = input('Please input keyword:\n')
