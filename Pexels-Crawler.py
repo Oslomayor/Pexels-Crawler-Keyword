@@ -11,6 +11,8 @@ headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) \
 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'}
 
 def download_imgs(keyword):
+    # 除去首尾空格
+    keyword = keyword.strip()
     # 获取当前脚本运行路径
     dir = os.getcwd()
     # 创建文件夹
@@ -28,6 +30,7 @@ def download_imgs(keyword):
         file = open(dir + '/img of {keyword}/{keyword}_{count}.jpg'.format(keyword=keyword, count=count), 'wb')
         file.write(jpg.content)
         file.close()
+    print('共下载{}张图片\n'.format(count) + '已保存在 {}'.format(dir + '/img of {keyword}'.format(keyword=keyword)))
 
 def main():
     keyword = input('Please input keyword:\n')
