@@ -33,12 +33,12 @@ def download_imgs(keyword, pages):
         res = requests.get(url, headers=headers)
         soup = BeautifulSoup(res.text, 'lxml')
         jpg_srcs = soup.select('body > div.page-wrap > div.l-container > div.photos > article > a > img')
-        print('jpg_srcs')
-        print(jpg_srcs)
+        # print('jpg_srcs')
+        # print(jpg_srcs)
         for item in jpg_srcs:
             alljpg_srcs.append(item)
-        print('alljpg_srcs')
-        print(alljpg_srcs)
+        # print('alljpg_srcs')
+        # print(alljpg_srcs)
         time.sleep(1)
     count = 0
     for count, jpg_src in enumerate(alljpg_srcs):
